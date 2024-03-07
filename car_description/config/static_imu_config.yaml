@@ -1,0 +1,3 @@
+imu_publish_data:
+  - mount: 'fsp_r'
+  - mount: 'rear'

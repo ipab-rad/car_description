@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="imu" params="imu *origin">
+    <joint name="${imu}_joint" type="fixed">
+      <xacro:insert_block name="origin" />
+      <parent link="${roof_datum}"/>
+      <child link="${imu}"/>
+    </joint>
+    <link name="${imu}">
+      <inertial>
+        <mass value="1e-5" />
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+      </inertial>
+    </link>
+  </xacro:macro>
+
+</robot>

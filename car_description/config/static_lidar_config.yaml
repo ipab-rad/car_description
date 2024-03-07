@@ -1,0 +1,5 @@
+lidar_publish_data:
+  - mount: 'top'
+  - mount: 'left'
+  - mount: 'right'
+  - mount: 'ouster_top'

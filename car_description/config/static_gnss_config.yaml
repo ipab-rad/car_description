@@ -1,0 +1,3 @@
+gnss_publish_data:
+  - mount: 'left'
+  - mount: 'right'

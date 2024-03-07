@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<robot name="mkz" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+  <!-- Necessary includes -->
+  <xacro:include filename="$(find car_description)/urdf/mondeo_dca/mondeo_dca_params.xacro" />
+  <xacro:include filename="$(find car_description)/urdf/mondeo_dca/mondeo_dca_structure.xacro" />
+  <!-- Bolt-on sensors go here -->
+  <xacro:include filename="$(find car_description)/urdf/mondeo_dca/mondeo_dca_sensors.xacro" />
+
+</robot>
