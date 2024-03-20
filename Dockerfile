@@ -8,6 +8,8 @@ RUN apt update \
         nano \
         # Base network tools
         inetutils-tools \
+        # Bash auto-completion for convenience
+        bash-completion \
     && rm -rf /var/lib/apt/lists/*
 
 # Setup ROS workspace folder
@@ -26,7 +28,7 @@ RUN apt update \
 
 # Source ROS setup for dependencies and build our code
 RUN . /opt/ros/$ROS_DISTRO/setup.sh \
-    && colcon build --symlink-install
+    && colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
 
 # Add command to docker entrypoint to source newly compiled code when running docker container
 RUN sed --in-place --expression \
