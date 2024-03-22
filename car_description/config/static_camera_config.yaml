@@ -1,0 +1,83 @@
+camera_publish_data:
+  - group: 'fsp'
+    mount: 'l'
+    cam_pair_name: 'front_stereo'
+    registration_root: 'registration/left'
+
+  - group: 'fsp'
+    mount: 'r'
+    cam_pair_name: 'front_stereo'
+    registration_root: 'registration/right'
+
+  - group: 'rsspf'
+    mount: 'l'
+    cam_pair_name: 'right_stereo_front'
+    registration_root: 'registration/left'
+
+  - group: 'rsspf'
+    mount: 'r'
+    cam_pair_name: 'right_stereo_front'
+    registration_root: 'registration/right'
+
+  - group: 'rsspr'
+    mount: 'l'
+    cam_pair_name: 'right_stereo_rear'
+    registration_root: 'registration/left'
+
+  - group: 'rsspr'
+    mount: 'r'
+    cam_pair_name: 'right_stereo_rear'
+    registration_root: 'registration/right'
+
+  - group: 'rsp'
+    mount: 'l'
+    cam_pair_name: 'rear_stereo'
+    registration_root: 'registration/left'
+
+  - group: 'rsp'
+    mount: 'r'
+    cam_pair_name: 'rear_stereo'
+    registration_root: 'registration/right'
+
+  - group: 'lsspr'
+    mount: 'l'
+    cam_pair_name: 'left_stereo_rear'
+    registration_root: 'registration/left'
+
+  - group: 'lsspr'
+    mount: 'r'
+    cam_pair_name: 'left_stereo_rear'
+    registration_root: 'registration/right'
+
+  - group: 'lsspf'
+    mount: 'l'
+    cam_pair_name: 'left_stereo_front'
+    registration_root: 'registration/left'
+
+  - group: 'lsspf'
+    mount: 'r'
+    cam_pair_name: 'left_stereo_front'
+    registration_root: 'registration/right'
+
+  # IR lens placeholder-->
+  # Cameras 13, 14: TBA -->
+  # - group:
+  #   mount: 'l'
+  #   cam_pair_name:
+  #   registration_root: 'registration/left'
+
+  # - group:
+  #   mount: 'r'
+  #   cam_pair_name:
+  #   registration_root: 'registration/right'
+
+  # Zoom camera placeholder
+  #- group: 'tele'
+  #  mount: '1'
+  #  cam_pair_name: ''
+  #  registration_root: 'registration/tele1'
+
+  #- group: 'tele'
+  #  mount: '1'
+  #  cam_pair_name: ''
+  #  registration_root: 'registration/tele2'

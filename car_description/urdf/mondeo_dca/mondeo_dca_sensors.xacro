@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:include filename="$(find car_description)/urdf/cameras.xacro" />
+  <xacro:include filename="$(find car_description)/urdf/lidar.xacro" />
+  <xacro:include filename="$(find car_description)/urdf/radar.xacro" />
+  <xacro:include filename="$(find car_description)/urdf/imu.xacro" />
+  <xacro:include filename="$(find car_description)/urdf/gps.xacro" />
+  <xacro:include filename="$(find car_description)/urdf/oxts.xacro" />
+
+  <!-- DCA ROOFBOX CAMERA MOUNTS -->
+  <xacro:camera_mount name="camera_fsp_l_mount" parent="${roof_datum}">
+    <origin xyz="-0.11015 0.3 -0.06242" rpy="0 0.087266 0" />
+  </xacro:camera_mount>
+
+  <xacro:camera_mount name="camera_fsp_r_mount" parent="${roof_datum}">
+    <origin xyz="-0.11015 -0.3 -0.06242" rpy="0 0.087266 0" />
+  </xacro:camera_mount>
+
+  <xacro:camera_mount name="camera_rsspf_l_mount" parent="${roof_datum}">
+    <origin xyz="-0.69015 -0.45 -0.00242" rpy="0 0.087266 -1.151917" />
+  </xacro:camera_mount>
+
+  <xacro:camera_mount name="camera_rsspf_r_mount" parent="${roof_datum}">
+    <origin xyz="-0.781503 -0.490673 -0.00242" rpy="0 0.087266 -1.151917" />
+  </xacro:camera_mount>
+
+  <xacro:camera_mount name="camera_rsspr_l_mount" parent="${roof_datum}">
+    <origin xyz="-0.97015 -0.490673 -0.00242" rpy="0 0.087266 -1.989675" />
+  </xacro:camera_mount>
+
+  <xacro:camera_mount name="camera_rsspr_r_mount" parent="${roof_datum}">
+    <origin xyz="-1.061503 -0.450 0.00242" rpy="0 0.087266 -1.989675" />
+  </xacro:camera_mount>
+
+  <xacro:camera_mount name="camera_rsp_l_mount" parent="${roof_datum}">
+    <origin xyz="-1.11015 -0.3 0.00242" rpy="0 0.087266 3.141592654" />
+  </xacro:camera_mount>
+
+  <xacro:camera_mount name="camera_rsp_r_mount" parent="${roof_datum}">
+    <origin xyz="-1.11015 0.3 0.00242" rpy="0 0.087266 3.141592654" />
+  </xacro:camera_mount>
+
+  <xacro:camera_mount name="camera_lsspr_l_mount" parent="${roof_datum}">
+    <origin xyz="-1.061503 0.450 0.00242" rpy="0 0.087266 1.989675" />
+  </xacro:camera_mount>
+
+  <xacro:camera_mount name="camera_lsspr_r_mount" parent="${roof_datum}">
+    <origin xyz="-0.97015 0.490673 -0.00242" rpy="0 0.087266 1.989675" />
+  </xacro:camera_mount>
+
+  <xacro:camera_mount name="camera_lsspf_l_mount" parent="${roof_datum}">
+    <origin xyz="-0.781503 0.490673 -0.00242" rpy="0 0.087266 1.151917" />
+  </xacro:camera_mount>
+
+  <xacro:camera_mount name="camera_lsspf_r_mount" parent="${roof_datum}">
+    <origin xyz="-0.69015 0.45 -0.00242" rpy="0 0.087266 1.151917" />
+  </xacro:camera_mount>
+
+  <xacro:camera_mount name="camera_tele1_mount" parent="${roof_datum}">
+    <origin xyz="-0.11015 -0.120 -0.06242" rpy="0 0 0" />
+  </xacro:camera_mount>
+
+  <xacro:camera_mount name="camera_tele2_mount" parent="${roof_datum}">
+    <origin xyz="-0.11015 -0.205 -0.06242" rpy="0 0 0" />
+  </xacro:camera_mount>
+
+  <xacro:camera_mount name="camera_ir1_mount" parent="${roof_datum}">
+    <origin xyz="-0.11015 0.120 -0.06242" rpy="0 0 0" />
+  </xacro:camera_mount>
+
+  <xacro:camera_mount name="camera_ir2_mount" parent="${roof_datum}">
+    <origin xyz="-0.11015 0.205 -0.06242" rpy="0 0 0" />
+  </xacro:camera_mount>
+
+  <!-- IMU -->
+  <xacro:imu imu="imu_rear_mount">
+    <origin xyz="${oxts_x-0.19} ${oxts_y+0.23} ${oxts_z-0.44}" rpy="0 0 0" />
+  </xacro:imu>
+
+  <xacro:imu imu="imu_fsp_r_mount">
+    <origin xyz="-0.23515 -0.355 -0.05442" rpy="0 0 0" />
+  </xacro:imu>
+
+  <!-- OXTS -->
+  <xacro:oxts name="oxts">
+    <origin xyz="${oxts_x} ${oxts_y} ${oxts_z}" rpy="0.0 0.0 0.0" />
+  </xacro:oxts>
+
+  <!-- GPS -->
+  <xacro:gps name="gps_antenna_right_mount">
+    <origin xyz="${gps_antenna_base_left_x} ${-gps_antenna_base_left_y} ${gps_antenna_base_left_z}" rpy="0 0 0" />
+  </xacro:gps>
+
+  <xacro:gps name="gps_antenna_left_mount">
+    <origin xyz="${gps_antenna_base_left_x} ${gps_antenna_base_left_y} ${gps_antenna_base_left_z}" rpy="0 0 0" />
+  </xacro:gps>
+
+  <!-- LIDAR -->
+  <xacro:lidar name="lidar_top" parent="${roof_datum}">
+    <origin xyz="-0.66015 0 0.19758" rpy="0 0 0" />
+  </xacro:lidar>
+
+  <xacro:lidar name="lidar_left" parent="${roof_datum}">
+    <origin xyz="-0.03015 0.720 -0.22242" rpy="-0.087266 0.087266 0.6562438" />
+  </xacro:lidar>
+
+  <xacro:lidar name="lidar_right" parent="${roof_datum}">
+    <origin xyz="-0.03015 -0.720 -0.22242" rpy="0.087266 0.087266 -0.6562438" />
+  </xacro:lidar>
+
+  <xacro:lidar name="lidar_ouster_top" parent="${roof_datum}">
+    <origin xyz="-0.65855 0 0.21849" rpy="0 -0.017453 0" />
+  </xacro:lidar>
+
+  <!-- RADAR -->
+  <xacro:radar name="radar_roof_left_front_mount" parent="${roof_datum}">
+    <origin xyz="-0.30185 0.48847 -0.02042" rpy="3.141592654 0 1.33657" />
+  </xacro:radar>
+
+  <xacro:radar name="radar_roof_right_front_mount" parent="${roof_datum}">
+    <origin xyz="-0.30185 -0.48847 -0.02042" rpy="0 0 -1.31605" />
+  </xacro:radar>
+
+  <xacro:radar name="radar_roof_left_rear_mount" parent="${roof_datum}">
+    <origin xyz="-1.12515 0.410 0.00258" rpy="0 0 2.3658" />
+  </xacro:radar>
+
+  <xacro:radar name="radar_roof_right_rear_mount" parent="${roof_datum}">
+    <origin xyz="-1.12515 -0.410 0.00258" rpy="3.141592654 0 -2.3606" />
+  </xacro:radar>
+
+  <xacro:radar name="radar_bumper_front_left_mount" parent="${front_bumper}">
+    <origin xyz="-0.16666 0.58893 0.24618" rpy="0 0 0.645772" />
+  </xacro:radar>
+
+  <xacro:radar name="radar_bumper_front_centre_mount" parent="${front_bumper}">
+    <origin xyz="-0.07709 0 0.34618" rpy="0 0 0" />
+  </xacro:radar>
+
+  <xacro:radar name="radar_bumper_front_right_mount" parent="${front_bumper}">
+    <origin xyz="-0.16666 -0.58893 0.24618" rpy="3.141592654 0 -0.645772" />
+  </xacro:radar>
+
+  <xacro:radar name="radar_bumper_rear_centre_mount" parent="rear_axle">
+    <origin xyz="-1.04 0 0.16" rpy="0 0 3.141592654" />
+  </xacro:radar>
+
+
+</robot>

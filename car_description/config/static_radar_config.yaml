@@ -1,0 +1,9 @@
+radar_publish_data:
+  - mount: 'roof_left_front'
+  - mount: 'roof_right_front'
+  - mount: 'roof_left_rear'
+  - mount: 'roof_right_rear'
+  - mount: 'bumper_front_left'
+  - mount: 'bumper_front_centre'
+  - mount: 'bumper_front_right'
+  - mount: 'bumper_rear_centre'

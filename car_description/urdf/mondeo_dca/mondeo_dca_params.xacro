@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- CAR DIMENSIONS -->
+  <xacro:property name="car_length" value="4.8" />
+  <xacro:property name="car_width" value="1.75" />
+  <xacro:property name="car_height" value="1.5" />
+  <xacro:property name="car_offx" value="0.08" />
+  <xacro:property name="car_offy" value="0.0" />
+  <xacro:property name="car_offz" value="${0.04 + car_height/2}" />
+  <xacro:property name="centre_grav_z" value="0.0" /> <!-- Relative to base_link -->
+  <xacro:property name="vehicle_bonnet_x" value="${2.85 - base_link_x}" /> <!-- Relative to base_link -->
+  <xacro:property name="vehicle_bonnet_z" value="${0.69 - base_link_z}" /> <!-- Relative to base_link -->
+  <xacro:property name="front_axle_x" value="1.425" />
+  <xacro:property name="wheel_front_y" value="0.79121" /> <!-- The distance of front wheel joints from axle center -->
+  <xacro:property name="wheel_rear_y" value="0.7874" /> <!-- The distance of rear wheel joints from axle center -->
+  <xacro:property name="base_link_x" value="1.425" />
+  <xacro:property name="base_link_z" value="0.33" /> <!-- Above ground footprint -->
+  <xacro:property name="rear_axle_x" value="${-base_link_x}" /> <!-- Relative to base_link -->
+  <xacro:property name="rear_axle_z" value="0.0" /> <!-- Relative to base_link -->
+  <xacro:property name="roof_datum_x" value="1.88985" />
+  <xacro:property name="roof_datum_z" value="1.23242" />
+  <xacro:property name="front_bumper_x" value="0.915" /> <!-- Relative to vehicle_bonnet -->
+  <xacro:property name="front_bumper_z" value="${0.23 - (vehicle_bonnet_z + base_link_z)}" />
+
+  <!-- FOOTPRINT (Delimited by chassis extremes) -->
+  <xacro:property name="footprint_front_x" value="3.805" /> <!-- Relative to rear_axle -->
+  <xacro:property name="footprint_rear_x" value="-1.1" /> <!-- Relative to rear_axle -->
+  <xacro:property name="footprint_y" value="${2.14 / 2.0}" /> <!-- Symmetric about the centreline -->
+
+  <!-- PHYSICAL PROPERTIES -->
+  <xacro:property name="wheel_side" value="0.785" />
+  <xacro:property name="wheel_width" value="0.2" />
+  <xacro:property name="wheel_radius" value="${0.66/2}" />
+  <xacro:property name="chassis_weight" value="1500" />
+  <xacro:property name="wheel_weight" value="10" />
+
+  <!-- SENSOR OFFSETS -->
+  <xacro:property name="oxts_x" value="${-0.59 - roof_datum_x}" /> <!-- Relative to roof_datum -->
+  <xacro:property name="oxts_y" value="-0.07" /> <!-- Relative to roof_datum -->
+  <xacro:property name="oxts_z" value="${0.9 - roof_datum_z - base_link_z}" /> <!-- Relative to roof_datum -->
+
+  <!-- The GPS antenna has been measured relative to the rear axle. The numerical values below gives these
+       measurements. However, offsets are applied to make these values relative to the roof_datum -->
+  <xacro:property name="gps_antenna_base_left_x" value="${0.27 - roof_datum_x}" />
+  <xacro:property name="gps_antenna_base_left_y" value="0.5475" />
+  <xacro:property name="gps_antenna_base_left_z" value="${1.02 - roof_datum_z}" />
+
+  <!-- NOMENCLATURE -->
+  <xacro:property name="vehicle_bonnet" value="vehicle_bonnet" />
+  <xacro:property name="roof_datum" value="vehicle_roof_datum" />
+  <xacro:property name="footprint" value="footprint" />
+  <xacro:property name="lidar_top" value="lidar_top_mount" />
+  <xacro:property name="cham_left" value="camera_internal_left" />
+  <xacro:property name="cham_right" value="camera_internal_right" />
+  <xacro:property name="front_bumper" value="front_bumper" />
+
+</robot>
